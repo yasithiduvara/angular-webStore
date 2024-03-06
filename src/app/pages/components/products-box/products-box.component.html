@@ -1,0 +1,23 @@
+<mat-card [ngClass]="{'text-center': !fullWidthMode}">
+    <div [ngClass]="{flex: fullWidthMode}">
+        <img 
+            class="mb-1 mx-auto h-[200px]" 
+            src="https://placehold.co/150.png" 
+            [ngClass]="{'h-[200px]': !fullWidthMode, 'h-[300px]': fullWidthMode }">
+        <div class="w-full" [ngClass]="{'p-8 flex flex-col justify-between': fullWidthMode}">
+            <div>
+                <h5>Shoes</h5>
+                <p class="truncate hover:whitespace-normal">
+                    Snicker
+                </p>
+                <p *ngIf="fullWidthMode">Description</p>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-red-400">
+                    {{'150' | currency}}
+                </span>
+                <button (click)="onAddToCart()"><mat-icon class="text-green-600">shopping_cart</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</mat-card>
