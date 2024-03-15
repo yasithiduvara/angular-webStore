@@ -25,6 +25,9 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { ProductsBoxComponent } from './pages/components/products-box/products-box.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { StoreService } from './services/store.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HeroComponent } from './pages/components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { CartService } from './services/cart.service';
     FiltersComponent,
     ProductsBoxComponent,
     CartComponent,
+    HeroComponent,
 
   ],
   imports: [
@@ -53,10 +57,12 @@ import { CartService } from './services/cart.service';
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
+    HttpClientModule,
   ],
   
   providers: [
     CartService,
+    StoreService,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

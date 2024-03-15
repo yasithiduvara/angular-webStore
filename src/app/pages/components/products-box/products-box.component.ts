@@ -7,14 +7,7 @@ import { Product } from '../../../models/product.model';
 })
 export class ProductsBoxComponent {
   @Input() fullWidthMode = false;
-  product: Product | undefined = {
-    id: 1,
-    title: 'Sniker',
-    price: 150,
-    category: 'shoes',
-    description: 'Description',
-    image: 'https://placehold.co/150.png',
-  };
+  @Input() product: Product | undefined ;
   @Output() addToCart = new EventEmitter();
 
   onAddToCart(): void {
