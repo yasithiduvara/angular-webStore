@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product.model';
 import { Subscription } from 'rxjs';
@@ -11,6 +11,9 @@ const ROWS_HEIGHT: {[id:number]: number} = {1: 400, 3: 335, 4: 350}
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
+
+  @ViewChild('drawerContainer') drawerContainer!: ElementRef;
+
   cols = 3;
   rowHeight = ROWS_HEIGHT[this.cols];
   category: string | undefined;
@@ -70,6 +73,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
+  scrollToDrawer(): void {
+    if (this.drawerContainer) {
+      const yOffset = this.drawerContainer.nativeElement.offsetTop;
+      window.scrollTo({
+        top: yOffset,
+        behavior: 'smooth',
+      });
+    }
+  }
 
 
 

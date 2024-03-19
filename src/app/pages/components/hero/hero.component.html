@@ -7,7 +7,8 @@
       <mat-grid-tile
         [colspan]="tile.cols"
         [rowspan]="tile.rows"
-        [style]="getBackgroundImage(tile)"  class="text-white capitalize text-[3rem] bg-[#a5515100] ">
+        [style]="getBackgroundImage(tile)"  class="text-white capitalize text-[3rem] bg-[#a5515100] "
+        (click)="tileClicked()">
 
                   <div class="bg-[#0000008a] p-[100%] rounded-[10px] transition-all 0.5s font-serif hero">
                     {{tile.text}}

@@ -1,7 +1,8 @@
 
-<app-hero></app-hero>
+<app-hero (tileClick)="scrollToDrawer()" ></app-hero>
 
-<div class=" ">
+<div #drawerContainer >
+
     <mat-drawer-container [autosize]="true" class="bg-slate-50" >
         
             <!-- <mat-drawer mode="side" opened class="p-6">
