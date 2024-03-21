@@ -2,17 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-html{
-    --mat-tree-container-background-color: #ffffff;
-} */
+html {
+    --mat-sidenav-container-divider-color: rgba(255, 255, 255, 0.12);
+    --mat-sidenav-container-background-color: #424242;
+    --mat-sidenav-container-text-color: rgb(0, 0, 0);
+    --mat-sidenav-content-background-color: #3d3d3d;
+    --mat-sidenav-content-text-color: rgb(0, 0, 0);
+    --mat-sidenav-scrim-color: rgba(189, 189, 189, 0.6);
+    --mdc-elevated-card-container-color: rgb(255, 255, 255);
+    --mat-icon-color: white;
+}
+
+
 
 
 html, body { height: 100%; }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-color: #ffffff;
 }
 
 .hero:hover{
@@ -21,4 +28,9 @@ body {
     transition: all 0.5s;
     cursor: pointer;
 }
+
+.productbox_card{
+    color: black;
+}
+
 

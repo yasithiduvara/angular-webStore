@@ -1,5 +1,6 @@
-<mat-card class="mb-4 p-2">
+<!-- <mat-card class="mb-4 p-2">
     <div class="flex justify-between">
+
         <div>
             <button mat-button [matMenuTriggerFor]="sortByMenu" >
                 Sort by {{sort}}
@@ -11,6 +12,7 @@
                 <button (click)="onSortUpdate('asc')" mat-menu-item>asc</button>
             </mat-menu>
         </div>
+
         <div class="flex items-center" >
             <div>
                 <button mat-button [matMenuTriggerFor]="menu">
@@ -18,6 +20,46 @@
                     <mat-icon>expand_more</mat-icon>
                   </button>
                   <mat-menu #menu="matMenu">
+                    <button (click)="onItemsUpdated(12)" mat-menu-item>12</button>
+                    <button (click)="onItemsUpdated(24)" mat-menu-item>24</button>
+                    <button (click)="onItemsUpdated(36)" mat-menu-item>36</button>
+                  </mat-menu>
+            </div>
+       
+            <button (click)="onColumnsUpdated(1)">
+                <mat-icon>view_list</mat-icon>
+              </button>
+              <button (click)="onColumnsUpdated(3)">
+                <mat-icon>view_module</mat-icon>
+              </button>
+              <button (click)="onColumnsUpdated(4)">
+                <mat-icon>view_comfy</mat-icon>
+              </button>
+        </div>
+
+    </div>
+</mat-card> -->
+
+<div class=" flex justify-between bg-[#000000] p-3 mb-4 rounded-[10px]">
+   <div class="">
+            <button mat-button [matMenuTriggerFor]="sortByMenu" >
+                Sort by {{sort}}
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #sortByMenu="matMenu">
+                <button (click)="onSortUpdate('desc')" mat-menu-item>dese</button>
+                <button (click)="onSortUpdate('asc')" mat-menu-item>asc</button>
+            </mat-menu>
+    </div>
+
+        <div class="flex items-center" >
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu" >
+                    Show {{ itemsShowCount }}
+                    <mat-icon>expand_more</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" >
                     <button (click)="onItemsUpdated(12)" mat-menu-item>12</button>
                     <button (click)="onItemsUpdated(24)" mat-menu-item>24</button>
                     <button (click)="onItemsUpdated(36)" mat-menu-item>36</button>
@@ -44,5 +86,4 @@
                 <mat-icon>view_comfy</mat-icon>
               </button>
         </div>
-    </div>
-</mat-card>
+</div>

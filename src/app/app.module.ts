@@ -28,6 +28,7 @@ import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroComponent } from './pages/components/hero/hero.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HeroComponent } from './pages/components/hero/hero.component';
     ProductsBoxComponent,
     CartComponent,
     HeroComponent,
+    ProductPageComponent,
 
   ],
   imports: [

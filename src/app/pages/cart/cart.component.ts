@@ -7,14 +7,7 @@ import { CartService } from '../../services/cart.service';
   templateUrl: 'cart.component.html'
 })
 export class CartComponent {
-  cart: Cart = { items: [{
-  product: 'https://placehold.co/150.png',
-  name: 'Yasith',
-  price: 150,
-  quantity: 1,
-  id: 1,
-  }]}
-
+  cart: Cart = {items: []}
   dataSource: Array<CartItem> = [];
   displayedColumns: Array<string> = [
     'product',

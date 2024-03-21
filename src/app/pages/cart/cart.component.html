@@ -99,12 +99,11 @@
       <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
       
     </table>
-
   </mat-card>
 
-<mat-card *ngIf="!cart.items.length" class="max-w-7xl mx-auto">
-    <p class="text-white">
-        Ypure cart is empty
+<mat-card *ngIf="!cart.items.length" class="max-w-7xl mx-auto pt-10">
+    <p class="text-black">
+        Youre cart is empty
         <button mat-raised-button routerLink="/home">Start shopping</button>
     </p>
 </mat-card>
