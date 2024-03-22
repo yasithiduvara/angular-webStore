@@ -1,30 +1,31 @@
+<app-hero (tileClick)="scrollToDrawer()"></app-hero>
 
-<app-hero (tileClick)="scrollToDrawer()" ></app-hero>
-
-<div #drawerContainer >
-
-    <mat-drawer-container [autosize]="true" class="bg-slate-50" >
-        
-            <!-- <mat-drawer mode="side" opened class="p-6">
+<div #drawerContainer>
+  <mat-drawer-container [autosize]="true" class="bg-slate-50">
+    <!-- <mat-drawer mode="side" opened class="p-6">
                <app-filters (showCategory)="onShowCategory($event)"></app-filters>
                
             </mat-drawer> -->
-        
-            <mat-drawer-content class="p-6">
-                <app-products-header 
-                    (columnsCountChange)="onColumnsCountChange($event)"
-                    (itemsCountChange)="onItemsCountChange($event)" 
-                    (sortChange)="onSortChange($event)"
-                    (columnsCountChange)="onColumnsCountChange($event)"></app-products-header>
-        
-                <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
-                    <mat-grid-tile *ngFor="let product of products">
-                        <app-products-box [product] = "product" (addToCart)="onAddToCart($event)" class="w-full" [fullWidthMode]="cols === 1"></app-products-box>
-                    </mat-grid-tile>
-                </mat-grid-list>
 
-                
-              </mat-drawer-content>
-        
-        </mat-drawer-container>
+    <mat-drawer-content class="p-6">
+      <app-products-header
+        (columnsCountChange)="onColumnsCountChange($event)"
+        (itemsCountChange)="onItemsCountChange($event)"
+        (sortChange)="onSortChange($event)"
+        (columnsCountChange)="onColumnsCountChange($event)"
+      ></app-products-header>
+
+      <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
+        <mat-grid-tile *ngFor="let product of products">
+          <app-products-box
+            [product]="product"
+            (addToCart)="onAddToCart($event)"
+            (cardClick)="onCardClick($event)"
+            class="w-full"
+            [fullWidthMode]="cols === 1"
+          ></app-products-box>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>

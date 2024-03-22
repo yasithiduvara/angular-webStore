@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Product } from '../../models/product.model';
 
 
@@ -9,8 +10,17 @@ import { Product } from '../../models/product.model';
 })
 
 
-export class ProductPageComponent {
+export class ProductPageComponent  implements OnInit {
+  product!: Product;
 
-  @Input() product: Product | undefined ;
+constructor(private router: Router){
+  const navigation = this.router.getCurrentNavigation();
+  if (navigation && navigation.extras.state) {
+    this.product = navigation.extras.state['product'] as Product;
+  }
+}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
   
 }

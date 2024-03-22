@@ -9,9 +9,14 @@ export class ProductsBoxComponent {
   @Input() fullWidthMode = false;
   @Input() product: Product | undefined ;
   @Output() addToCart = new EventEmitter();
+  @Output() cardClick = new EventEmitter<Product>();
 
   onAddToCart(): void {
     this.addToCart.emit(this.product);
+  }
+
+  onCardClick(): void {
+    this.cardClick.emit(this.product);
   }
 
 }

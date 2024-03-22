@@ -3,6 +3,8 @@ import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product.model';
 import { Subscription } from 'rxjs';
 import { StoreService } from '../../services/store.service';
+import { Router } from '@angular/router';
+
 
 const ROWS_HEIGHT: {[id:number]: number} = {1: 400, 3: 335, 4: 350}
 
@@ -23,7 +25,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   productSubcription: Subscription | undefined;
 
 
-  constructor(private cartService: CartService, private storeService: StoreService) {}
+  // constructor(private cartService: CartService, private storeService: StoreService) {}
+  constructor(private cartService: CartService, private storeService: StoreService, private router: Router) {}
 
 
   ngOnInit(): void {
@@ -83,6 +86,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-
+  onCardClick(product: Product): void {
+    this.router.navigate(['/product'], { state: { product } });
+  }
 
 }
