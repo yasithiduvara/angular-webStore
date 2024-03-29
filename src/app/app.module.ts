@@ -29,6 +29,7 @@ import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroComponent } from './pages/components/hero/hero.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { FooterComponent } from './pages/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     CartComponent,
     HeroComponent,
     ProductPageComponent,
+    FooterComponent,
 
   ],
   imports: [

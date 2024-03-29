@@ -1,25 +1,106 @@
-<!-- <mat-card class="max-w-[480px]">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="product?.image"  alt="Photo of a Shiba Inu" class="bg-cover">
-    <mat-card-content>
-      <p>
-        {{product?.description}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions class="text-black">
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card> -->
-
-  <div class="flex justify-between items-center p-10">
-    <div>
-        <img [src]="product.image" alt="">
-    </div>
-    <div> Product desctioption</div>
-    <div> shiping addres</div>
+<div class="flex justify-evenly pt-10">
+  <div class="w-[200px]">
+    <img [src]="product.image" alt="" />
   </div>
+
+  <div class="w-[500px]">
+    <div>
+      <h3 class="text-[#3cbbff]">{{ product.category }}</h3>
+      <h1>{{ product.description }}</h1>
+      <hr />
+      <h3 class="text-gray-400 mt-2">
+        Price :
+        <span class="text-red-600 text-[1.5rem]">${{ product.price }}</span>
+      </h3>
+    </div>
+
+    <div>
+      <h3>Colors:</h3>
+      <div class="flex">
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+        <div class="border p-2 m-2">
+          <img [src]="product.image" class="w-[30px]" />
+        </div>
+      </div>
+
+      <p class="text-[1.2rem] pt-2">Product details</p>
+
+      <div class="flex justify-between w-[200px]">
+        <p class="font-semibold">Sole material</p>
+        <p>Rubber</p>
+      </div>
+      <div class="flex justify-between w-[200px]">
+        <p class="font-semibold">Outer material</p>
+        <p>Mesh</p>
+      </div>
+      <div class="flex justify-between w-[200px]">
+        <p class="font-semibold">Closure type</p>
+        <p>Lace-Up</p>
+      </div>
+
+      <hr />
+
+      <p class="text-[1.2rem] pt-2 font-semibold">About this item</p>
+
+      <li class="list-disc pl-4">
+        Rubber material of sole possesses high durability for prolonging the
+        wearing time of our shoes. Breathable mesh upper sport shoes, expand
+        with your foot when you run and they more comfortable closely fit to
+        help you reduce irritation.
+      </li>
+    </div>
+  </div>
+
+  <div class="">
+    <div
+      class="flex flex-col justify-center items-center border p-2 rounded-[10px]"
+    >
+      <p>To buy, select <b>Size</b></p>
+      <div (click)="onAddtoCart()" class="bg-yellow-300 w-full text-center rounded-[10px] p-1 mb-2">
+        <button class=" ">Add to card</button>
+        <div class="bg-[#0c2b09] p-1 rounded-[50px] w-[50px]" (click)="onPushtoCard()">
+          <button class="productbox_card"><mat-icon>shopping_cart</mat-icon></button>
+         </div>
+      </div>
+      <hr />
+      <div class="border-t ml-2 mr-2">
+        <input
+          type="text"
+          name=" add list"
+          placeholder="Add List"
+          class="border p-1 mt-2 rounded-[10px] w-full"
+        />
+      </div>
+    </div>
+  </div>
+</div>

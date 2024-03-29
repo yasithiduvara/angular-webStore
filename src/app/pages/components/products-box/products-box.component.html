@@ -1,15 +1,15 @@
-<mat-card [ngClass]="{'text-center': !fullWidthMode}" (click)="onCardClick()">
+<mat-card [ngClass]="{'text-center': !fullWidthMode}" >
     
     <div [ngClass]="{flex: fullWidthMode}">
       
-        <div class="p-2">
+        <div class="p-2 flex justify-center cursor-pointer product__box" (click)="onCardClick()" >
             <img 
-            class="mb-1 mx-auto h-[200px]" 
+            class="mb-1 h-[200px] " 
             [src]="product?.image" 
             [ngClass]="{'h-[200px]': !fullWidthMode, 'h-[300px]': fullWidthMode }">
         </div>
 
-        <div class="w-full" [ngClass]="{'p-8 flex flex-col justify-between': fullWidthMode}" class="bg-[#555555] text-white p-2" >
+        <div [ngClass]="{'p-8 flex flex-col justify-between': fullWidthMode}" class=" text-black p-2 w-29" >
             <div >
                 <h5>{{product?.category}}</h5>
                 <p class="truncate hover:whitespace-normal">
@@ -21,7 +21,9 @@
                 <span class="text-[1.5rem] font-bold ">
                     {{product?.price| currency}}
                 </span>
-                <button class="productbox_card" (click)="onAddToCart()"><mat-icon>shopping_cart</mat-icon></button>
+               <div class="bg-[#0c2b09] p-1 rounded-[50px] w-[50px]" (click)="onAddToCart()">
+                <button class="productbox_card"><mat-icon>shopping_cart</mat-icon></button>
+               </div>
             </div>
         </div>
 

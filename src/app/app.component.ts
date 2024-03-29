@@ -9,7 +9,8 @@ import { CartService } from './services/cart.service';
     
     <router-outlet></router-outlet>
 
-   
+    <app-footer></app-footer>
+
   `,
   styles: []
 })

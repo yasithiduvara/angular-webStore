@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Product } from '../../models/product.model';
 
@@ -11,6 +11,8 @@ import { Product } from '../../models/product.model';
 
 
 export class ProductPageComponent  implements OnInit {
+  @Output() addToCart = new EventEmitter();
+
   product!: Product;
 
 constructor(private router: Router){
@@ -19,8 +21,23 @@ constructor(private router: Router){
     this.product = navigation.extras.state['product'] as Product;
   }
 }
+
+onAddtoCart(): void {
+  // this.addToCart.emit(this.product);
+ this.addToCart.emit(this.product);
+}
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
   
+  onPushtoCard(): void {
+    this.addToCart.emit(this.product)
+
+  }
+
 }
+
+
+
+

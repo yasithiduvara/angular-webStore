@@ -6,11 +6,11 @@ html {
     --mat-sidenav-container-divider-color: rgba(255, 255, 255, 0.12);
     --mat-sidenav-container-background-color: #424242;
     --mat-sidenav-container-text-color: rgb(0, 0, 0);
-    --mat-sidenav-content-background-color: #3d3d3d;
+    --mat-sidenav-content-background-color: #ffffff;
     --mat-sidenav-content-text-color: rgb(0, 0, 0);
     --mat-sidenav-scrim-color: rgba(189, 189, 189, 0.6);
     --mdc-elevated-card-container-color: rgb(255, 255, 255);
-    --mat-icon-color: white;
+    --mat-icon-color: rgb(255, 255, 255);
 }
 
 
@@ -34,3 +34,10 @@ body {
 }
 
 
+/* product__box animation */
+
+.product__box:hover{
+    padding: 10px;
+    border-bottom: 2px solid black;
+    transition: all 0.1s;
+}
